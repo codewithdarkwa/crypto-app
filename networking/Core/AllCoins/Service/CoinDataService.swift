@@ -9,8 +9,8 @@ import Foundation
 
 class CoinDataService{
     
-    private let urlString = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false&locale=en"
-    func fetchCoins(){
+    private let urlString = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1&sparkline=false&locale=en"
+    func fetchCoins( completion: @escaping([Coin])->Void){
         guard let url = URL(string: urlString) else {return}
         
         URLSession.shared.dataTask(with: url){ data, response, error in
@@ -21,10 +21,7 @@ class CoinDataService{
                 print("Failed to decode coins")
                 return
             }
-            for coin in coins {
-                print("Coin id \(coin.id)")
-            }
-            print("coins decoded \(coins)")
+           completion(coins)
         }.resume()
     }
     

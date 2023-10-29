@@ -10,7 +10,12 @@ import SwiftUI
 struct ContentView: View {
     @StateObject var viewModel = CoinViewModel()
     var body: some View {
-        Text("\(viewModel.coin) : \(viewModel.price)")
+        Text("Hello world")
+        List{
+            ForEach(viewModel.coins){ coin in
+                Text(coin.name)
+            }
+        }
     }
 }
 
