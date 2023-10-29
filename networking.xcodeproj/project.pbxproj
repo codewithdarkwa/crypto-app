@@ -11,6 +11,7 @@
 		52AD33D42AEE898A00DC7342 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD33D32AEE898A00DC7342 /* ContentView.swift */; };
 		52AD33D62AEE898C00DC7342 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52AD33D52AEE898C00DC7342 /* Assets.xcassets */; };
 		52AD33D92AEE898C00DC7342 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52AD33D82AEE898C00DC7342 /* Preview Assets.xcassets */; };
+		52AD33E72AEEC26C00DC7342 /* CoinDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD33E62AEEC26C00DC7342 /* CoinDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		52AD33D32AEE898A00DC7342 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		52AD33D52AEE898C00DC7342 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52AD33D82AEE898C00DC7342 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		52AD33E62AEEC26C00DC7342 /* CoinDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +53,7 @@
 		52AD33D02AEE898A00DC7342 /* networking */ = {
 			isa = PBXGroup;
 			children = (
-				52AD33D12AEE898A00DC7342 /* networkingApp.swift */,
+				52AD33DF2AEEC1AB00DC7342 /* Core */,
 				52AD33D32AEE898A00DC7342 /* ContentView.swift */,
 				52AD33D52AEE898C00DC7342 /* Assets.xcassets */,
 				52AD33D72AEE898C00DC7342 /* Preview Content */,
@@ -65,6 +67,55 @@
 				52AD33D82AEE898C00DC7342 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		52AD33DF2AEEC1AB00DC7342 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				52AD33E02AEEC1BA00DC7342 /* AllCoins */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		52AD33E02AEEC1BA00DC7342 /* AllCoins */ = {
+			isa = PBXGroup;
+			children = (
+				52AD33E52AEEC23C00DC7342 /* Service */,
+				52AD33E42AEEC1F900DC7342 /* Model */,
+				52AD33E12AEEC1C400DC7342 /* View */,
+				52AD33E32AEEC1ED00DC7342 /* ViewModel */,
+			);
+			path = AllCoins;
+			sourceTree = "<group>";
+		};
+		52AD33E12AEEC1C400DC7342 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				52AD33D12AEE898A00DC7342 /* networkingApp.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		52AD33E32AEEC1ED00DC7342 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		52AD33E42AEEC1F900DC7342 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		52AD33E52AEEC23C00DC7342 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				52AD33E62AEEC26C00DC7342 /* CoinDataService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +188,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52AD33E72AEEC26C00DC7342 /* CoinDataService.swift in Sources */,
 				52AD33D42AEE898A00DC7342 /* ContentView.swift in Sources */,
 				52AD33D22AEE898A00DC7342 /* networkingApp.swift in Sources */,
 			);
