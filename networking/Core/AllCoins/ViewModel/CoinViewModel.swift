@@ -13,20 +13,42 @@ class CoinViewModel: ObservableObject {
 //    @Published var coin = ""
 //    @Published var price = ""
     @Published var coins = [Coin]()
+    @Published var errorMessage: String?
     
     private let service = CoinDataService()
     
     init(){
-        fetchCoins()
+        Task{ try await fetchCoins()}
     }
     
-    func fetchCoins(){
-        service.fetchCoins { coins in
+    @MainActor
+    func fetchCoins() async throws{
+        self.coins =  try await service.fetchCoins()
+    }
+    
+    func fetchCoinsWithCompletioinHandler(){
+        
+        service.fetchCoinsWithResult { [weak self] result in
             DispatchQueue.main.async {
-                self.coins = coins
+                switch result {
+                case .success(let coins):
+                    self?.coins = coins
+                case .failure(let error):
+                    self?.errorMessage = error.localizedDescription
+                }
+
             }
-            
         }
+//        service.fetchCoins { coins, error in
+//            DispatchQueue.main.async {
+//                if let error = error{
+//                    self.errorMessage = error.localizedDescription
+//                    return
+//                }
+//                self.coins = coins ?? []
+//            }
+//
+//        }
     }
     
 //    func fetchCoinPrice(coin: String) {
